@@ -1,6 +1,6 @@
-// Define la clase LibroCalificaciones con una función miembro llamada mostrarMensaje;
-// La función miembro debe recibir un parámetro.
-// Crea un objeto LibroCalificaciones y llama a su función mostrarMensaje.
+// Define la clase LibroCalificaciones que contiene un miembro de datos
+// nombreCurso y funciones miembro para establecer y obtener su valor;
+// Crea y manipula un objeto LibroCalificaciones.
 #include <iostream>
 
 using std::cout; 
@@ -16,12 +16,32 @@ using std::getline;
 class LibroCalificaciones
 {
 	public:
+
+		// Función que establece el nombre del curso
+		void establecerNombreCurso(string nombre)
+		{
+			nombreCurso = nombre; // Almacena el nombre del curso objeto. 
+		} // Fin de la función establecerNombreCurso.
 		
-		// Función que muestra un mensaje de bienvenida para el usuario de LibroCalificaciones.
+		// Función que obtiene le nombre del curso .
+		string obtenerNombreCurso()
+		{
+			return nombreCurso; // Devuelve el nombreCurso del objeto.
+		} // Fin de la función ontenerNombreCurso.
+
+		// Función que muestra un mensaje de bienvenida.
 		void mostrarMensaje(string nombreCurso)
 		{
-			cout << "Bienvenido al Libro de calificaciones para \n" << nombreCurso << "!" << endl;
-		} // Fin de la función mostrarMensaje
+			
+			// Esta instrucción llama a obtenerNombreCurso para obtener el
+			// nombre del curso que representa este LibriCalificaciones
+			cout << "Bienvenido al Libro de calificaciones para \n" << obtenerNombreCurso() << "!" << endl;
+
+		} // Fin de la función mostrarMensaje.
+
+	private:
+
+		string nombreCurso; // Nombre del curso para este LibroCalificaciones.
 
 }; // Fin de la clase LibroCalificaciones
 
@@ -32,15 +52,17 @@ int main()
 	string nombreDelCurso; // Cadena de caracteres que almacena el nombre del curso.
 	LibroCalificaciones miLibroCalificaciones; // Crea un objeto LibroCalificaciones llamado miLibroCalificaciones
 
-	// Pide y recibe el nombre del curso como entrada.
-	cout << "Escriba el nombre del curso:" << endl;
+	// Muestra el valor inicial de nombreCurso
+	cout << "El nombre inicial del curso es: " << miLibroCalificaciones.obtenerNombreCurso() << endl;
+
+	// Pide, recibe y establece el nombre del curso.
+	cout << "\nEscriba el nombre del curso: " << endl;
 	getline(cin, nombreDelCurso); // Lee el nombre de un curso con espacios en blanco.
-	cout << endl; // Imprime un linea en blanco.
+	miLibroCalificaciones.establecerNombreCurso(nombreDelCurso); // Establece el nombre del curso.
+	
+	cout << endl; // Imprime una línea en blanco.
+	miLibroCalificaciones.mostrarMensaje(nombreDelCurso); // Muestra un mensaje con el nuevo nombre del curso.
 
-	// Llama a la función mostrarMensaje de miLibroCalificaciones.
-	// y pasa nombreDelCurso como argumento.
-	miLibroCalificaciones.mostrarMensaje(nombreDelCurso);
-
-	return 0;
+	return 0; // Indica que terminó correctamente.
 
 } // Fin de main
