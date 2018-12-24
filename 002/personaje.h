@@ -3,6 +3,13 @@
 
 #include <string>
 
+
+namespace learningcpp
+{	
+namespace videogame
+{
+
+
 struct DatosPersonaje 
 {
 	unsigned char  tipo;
@@ -44,4 +51,9 @@ private:
 
 };
 
-#endif
+
+} // videogame
+} // learningcpp
+
+
+#endif // __PERSONAJE_H__

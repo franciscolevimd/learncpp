@@ -4,11 +4,12 @@
 
 using std::cout;
 using std::endl;
+using namespace learningcpp;
 
 
 int main (int argc, char **argv)
 {
-	Personaje *personaje = new Personaje();
+	videogame::Personaje *personaje = new videogame::Personaje();
 
 	cout << personaje->getNombre() << endl;
 

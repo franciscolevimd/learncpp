@@ -1,5 +1,7 @@
 #include "personaje.h"
 
+using namespace learningcpp::videogame;
+
 
 Personaje::Personaje()
 {
